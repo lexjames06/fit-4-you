@@ -1,32 +1,25 @@
 import React from 'react'
 import './GenderQuestions.css'
 
-export default function GenderQuestions({ 
-    getWorkoutButtonClicked, backButtonClicked, isMaleButtonClicked, isFemaleButtonClicked,
-    maleButtonClicked, femaleButtonClicked
+export default function GenderQuestions({
+    currentPageNumber, maleButtonClicked, femaleButtonClicked
 }) {
     return (
         <div className={`GenderQuestions ${
-            getWorkoutButtonClicked ? 
-            'ShowGenderQuestions' :
-            isMaleButtonClicked || isFemaleButtonClicked ?
-                'HideGenderQuestions' : 
-                ''
-        }`}>
-            <button 
-                className='BackButton'
-                onClick={backButtonClicked}
-            >
-                <h1>Back</h1>
-            </button>
+            currentPageNumber === 1 ?
+                'ShowGenderQuestions' :
+                currentPageNumber > 1 ?
+                    'HideGenderQuestions' :
+                    ''
+            }`}>
             <h1 className='questions'>Select the Most Appropriate...</h1>
-            <button 
+            <button
                 className='male-button'
                 onClick={maleButtonClicked}
             >
                 <h1>Male</h1>
             </button>
-            <button 
+            <button
                 className='female-button'
                 onClick={femaleButtonClicked}
             >

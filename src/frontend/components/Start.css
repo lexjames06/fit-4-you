@@ -1,6 +1,19 @@
-.logo {
-    width: 70vw;
+.start {
     position: absolute;
+    text-align: center;
+    transition: transform ease 0.3s;
+    transform: translateX(0);
+    height: 100vh;
+}
+
+.start.hide-start {
+    transform: translateX(-200%); 
+}
+
+.logo {
+    display: inline-block;
+    width: 70vw;
+    position: relative;
     top: 20vh;
 }
   
@@ -8,20 +21,18 @@
     background-color: #f5c812;
     width: 60vw;
     height: 10vh;
-    position: absolute;
-    top: 80vh;
+    position: relative;
+    top: 60vh;
     border-radius: 10px;
     border-color: transparent;
 }
 
-.start {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    transition: transform ease 0.3s;
-    transform: translateX(0);
-}
+@media (min-height: 1000px) {
+    .logo {
+        top: 10vh;
+    }
 
-.start.hide-start {
-    transform: translateX(-200%); 
+    .start-button {
+        top: 50vh;
+    }
 }

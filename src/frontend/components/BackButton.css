@@ -1,0 +1,22 @@
+.BackButton {
+    position: absolute;
+    left: 0;
+    margin: 15px;
+    height: 5vh;
+    width: 10vw;
+    background-color: #f5c812;
+    border-radius: 10px;
+    border-color: transparent;
+    transition: opacity ease 0.3s;
+    opacity: 0;
+}
+
+.BackButton.ShowBackButton {
+    opacity: 1;
+    z-index: 1;
+}
+
+.back-button-icon {
+    height: 100%;
+    width: 100%;
+}

@@ -1,20 +1,20 @@
-.GenderQuestions {
+.GoalQuestions {
     position: relative;
     text-align: center;
     transition: transform ease 0.3s;
-    transform: translateX(300%);
+    transform: translateX(200%);
     height: 100vh;
 }
 
-.GenderQuestions.ShowGenderQuestions {
-    transform: translateX(150%);
+.GoalQuestions.ShowGoalQuestions {
+    transform: translateX(50%);
 }
 
-.GenderQuestions.HideGenderQuestions {
-    transform: translateX(0);
+.GoalQuestions.HideGoalQuestions {
+    transform: translateX(-100%);
 }
 
-.male-button {
+.bodyfat-button {
     background-color: #f5c812;
     width: 60vw;
     height: 10vh;
@@ -24,12 +24,22 @@
     border-color: transparent;
 }
 
-.female-button {
+.muscle-button {
     background-color: #f5c812;
     width: 60vw;
     height: 10vh;
     position: relative;
     top: 35vh;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.cv-button {
+    background-color: #f5c812;
+    width: 60vw;
+    height: 10vh;
+    position: relative;
+    top: 45vh;
     border-radius: 10px;
     border-color: transparent;
 }

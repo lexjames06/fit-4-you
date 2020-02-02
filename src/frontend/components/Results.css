@@ -1,0 +1,29 @@
+.Results {
+    position: relative;
+    text-align: center;
+    transition: transform ease 0.3s;
+    transform: translateX(0);
+    height: 100vh;
+    width: 100vw;
+}
+
+.Results.ShowResults {
+    transform: translateX(-150%);
+}
+
+.question {
+    position: relative;
+    top: 20vh;
+    color: #f5c812;
+    width: 100vw;
+    margin: 10px 0;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
+}
+
+.question.input {
+    color: white;
+    font-size: 8vw;
+    text-transform: uppercase;
+    width: 80vw;
+    margin: 0 10vw;
+}

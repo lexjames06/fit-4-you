@@ -1,93 +1,171 @@
 import React from 'react'
 import Start from './Start'
 import GenderQuestions from './GenderQuestions'
+import BackButton from './BackButton'
+import WorkoutGoalQuestions from './WorkoutGoalQuestions'
+import WorkoutLocationQuestions from './WorkoutLocationQuestions'
+import Results from './Results'
 import './GetMyWorkout.css'
 
 export default class GetMyWorkout extends React.Component {
 
     constructor() {
         super();
-        this.state = { getWorkoutButtonClicked: false, maleQuestions: false, femaleQuestions: false, backButton: 0 };
+        this.state = { 
+            currentPageNumber: 0,
+            optionsSelected: {
+                Gender: '',
+                Goal: '',
+                Location: ''
+            }
+        };
     }
 
     toggleBackwards() {
-        this.setState({ backButton: this.state.backButton - 1 })
+        this.setState({
+            currentPageNumber: this.state.currentPageNumber - 1,
+        })
     }
 
     toggleQuestions() {
         this.setState({ 
-            getWorkoutButtonClicked: !this.state.getWorkoutButtonClicked,
-            backButton: this.state.backButton + 1 
+            currentPageNumber: this.state.currentPageNumber + 1
         })
     }
 
-    toggleMaleQuestions() {
-        this.setState({ 
-            maleQuestions: !this.state.maleQuestions, 
-            getWorkoutButtonClicked: !this.state.getWorkoutButtonClicked, 
-            backButton: this.state.backButton + 1 
-        })
+    toggleMale() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Gender: 'Male'
+                }
+            })
+        )
     }
         
-    toggleFemaleQuestions() {
-        this.setState({ 
-            femaleQuestions: !this.state.femaleQuestions, 
-            getWorkoutButtonClicked: !this.state.getWorkoutButtonClicked, 
-            backButton: this.state.backButton + 1 
-        })
+    toggleFemale() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Gender: 'Female'
+                }
+            })
+        )
+    }
+
+    toggleBodyFat() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Goal: 'Lower your Body Fat'
+                }
+            })
+        )
+    }
+
+    toggleMuscle() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Goal: 'Increase your Muscle Mass'
+                }
+            })
+        )
+    }
+
+    toggleCV() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Goal: 'Improve your CV Capacity'
+                }
+            })
+        )
+    }
+
+    toggleGym() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Location: 'the Gym'
+                }
+            })
+        )
+    }
+
+    toggleHome() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Location: 'Home'
+                }
+            })
+        )
+    }
+
+    toggleBoth() {
+        this.setState( 
+            prevState => ({
+                currentPageNumber: this.state.currentPageNumber + 1,
+                optionsSelected: {
+                    ...prevState.optionsSelected,
+                    Location: 'both the Gym & at Home'
+                }
+            })
+        )
     }
 
     render() {
-        let { getWorkoutButtonClicked, maleQuestions, femaleQuestions } = this.state;
-        let toggleQuestions = () => this.toggleQuestions();
-        let toggleMaleQuestions = () => this.toggleMaleQuestions();
-        let toggleFemaleQuestions = () => this.toggleFemaleQuestions();
-        // let { backButton } = this.state
-        // return (
-        //     <div className='GetMyWorkout'> {
-
-        //         backButton = {backButton}
-        //         let backButtonOptions = [
-                    <Start 
-                        getWorkoutButtonClicked={getWorkoutButtonClicked}
-                        isMaleButtonClicked={maleQuestions}
-                        isFemaleButtonClicked={femaleQuestions}
-                        backButtonClicked={toggleBackwards}
-                    />,
-                    <GenderQuestions
-                        getWorkoutButtonClicked={getWorkoutButtonClicked}
-                        isMaleButtonClicked={maleQuestions}
-                        isFemaleButtonClicked={femaleQuestions}
-                        backButtonClicked={toggleQuestions}
-                        maleButtonClicked={toggleMaleQuestions}
-                        femaleButtonClicked={toggleFemaleQuestions}
-                    />,
-                    <MaleQuestions
-                        maleButtonClicked={maleQuestions}
-                    />,
-                    <FemaleQuestions
-                        femaleButtonClicked={femaleQuestions}
-                    />
-                ];
-                // return backButtonOptions[backbutton];
-            }
+        console.log(this.state)
+        let { currentPageNumber, optionsSelected: { Gender, Goal, Location } } = this.state;
+        return (
+            <div className='GetMyWorkout'>
+            <BackButton 
+                backButtonClicked={() => this.toggleBackwards()}
+                currentPageNumber={currentPageNumber}
+            />
+            <Start 
+                currentPageNumber={currentPageNumber}
+                getWorkoutButtonClicked={() => this.toggleQuestions()}
+            />
+            <GenderQuestions
+                currentPageNumber={currentPageNumber}
+                maleButtonClicked={() => this.toggleMale()}
+                femaleButtonClicked={() => this.toggleFemale()}
+            />
+            <WorkoutGoalQuestions
+                currentPageNumber={currentPageNumber}
+                bodyFatButtonClicked={() => this.toggleBodyFat()}
+                muscleButtonClicked={() => this.toggleMuscle()}
+                cvButtonClicked={() => this.toggleCV()}
+            />
+            <WorkoutLocationQuestions
+                currentPageNumber={currentPageNumber}
+                gymButtonClicked={() => this.toggleGym()}
+                homeButtonClicked={() => this.toggleHome()}
+                bothButtonClicked={() => this.toggleBoth()}
+            />
+            <Results 
+                currentPageNumber={currentPageNumber}
+                genderQuestionResult={Gender}
+                goalQuestionResult={Goal}
+                locationQuestionResult={Location}
+            />
             </div>
         );
     }
-}
-
-function MaleQuestions({ maleButtonClicked }) {
-    return (
-        <div className={`MaleQuestions ${maleButtonClicked ? 'ShowMaleQuestions' : ''}`}>
-            <h1 className='questions'>Male Questions</h1>
-        </div>
-    );
-}
-
-function FemaleQuestions({ femaleButtonClicked }) {
-    return (
-        <div className={`FemaleQuestions ${femaleButtonClicked ? 'ShowFemaleQuestions' : ''}`}>
-            <h1 className='questions'>Female Questions</h1>
-        </div>
-    );
 }
