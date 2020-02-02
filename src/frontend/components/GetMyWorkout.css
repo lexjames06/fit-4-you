@@ -1,0 +1,29 @@
+.questions {
+    position: relative;
+    top: 20vh;
+    color: #f5c812;
+}
+
+.MaleQuestions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: transform ease 0.3s;
+    transform: translateX(200%);
+}
+
+.MaleQuestions.ShowMaleQuestions {
+    transform: translateX(0);
+}
+
+.FemaleQuestions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: transform ease 0.3s;
+    transform: translateX(200%);
+}
+
+.FemaleQuestions.ShowFemaleQuestions {
+    transform: translateX(0);
+}

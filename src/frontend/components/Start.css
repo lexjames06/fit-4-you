@@ -1,0 +1,27 @@
+.logo {
+    width: 70vw;
+    position: absolute;
+    top: 20vh;
+}
+  
+.start-button {
+    background-color: #f5c812;
+    width: 60vw;
+    height: 10vh;
+    position: absolute;
+    top: 80vh;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: transform ease 0.3s;
+    transform: translateX(0);
+}
+
+.start.hide-start {
+    transform: translateX(-200%); 
+}

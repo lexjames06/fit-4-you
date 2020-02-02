@@ -1,0 +1,44 @@
+.GenderQuestions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    transition: transform ease 0.3s;
+    transform: translateX(200%);
+}
+
+.GenderQuestions.ShowGenderQuestions {
+    transform: translateX(0);
+}
+
+.GenderQuestions.HideGenderQuestions {
+    transform: translateX(-200%);
+}
+
+.BackButton {
+    position: absolute;
+    left: 0;
+    margin: 15px;
+    background-color: #f5c812;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.male-button {
+    background-color: #f5c812;
+    width: 60vw;
+    height: 10vh;
+    position: absolute;
+    top: 40vh;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+.female-button {
+    background-color: #f5c812;
+    width: 60vw;
+    height: 10vh;
+    position: absolute;
+    top: 60vh;
+    border-radius: 10px;
+    border-color: transparent;
+}
