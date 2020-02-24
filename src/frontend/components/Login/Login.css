@@ -30,7 +30,11 @@
 .icon {
     height: 20px;
     grid-area: "icon";
-    padding: 12px 15px 18px;
+    padding: 15px;
     background: white;
     border-radius: 0 10px 10px 0;
+}
+
+.icon img {
+    width: 80%;
 }
