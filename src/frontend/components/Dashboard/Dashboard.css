@@ -1,0 +1,39 @@
+.welcome {
+    position: absolute;
+    color: #f5c812;
+    top: 20vh;
+}
+
+.welcome h1 {
+    font-size: 10vw;
+}
+
+.tool-bar {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100vw;
+    background-color: black;
+    border-top: 1px solid #f5c812;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+}
+
+.tool {
+    position: relative;
+    fill: grey;
+    height: 30px;
+    width: 30px;
+    align-self: center;
+}
+
+.tool.selected {
+    fill: #f5c812;
+}
+
+.tool#logo {
+    fill: #f5c812;
+    height: 40px;
+    width: auto;
+}

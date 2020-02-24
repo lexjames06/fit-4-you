@@ -3,5 +3,87 @@
   background-size: cover;
   background-position: center;
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  position: absolute;
+  width: 60vw;
+  left: 20vw;
+  height: 50px;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.button.solid {
+  background-color: #f5c812;
+  border-color: transparent;
+  color: black;
+}
+
+.button.hollow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: 2px solid #f5c812;
+}
+
+.button.button-main {
+  top: 70vh;
+}
+
+.button.button-secondary {
+  top: 70vh;
+  margin-top: 60px;
+}
+
+.button.button-tertiary {
+  top: 70vh;
+  margin-top: 120px;
+}
+
+.button h1 {
+  margin: 0;
+}
+
+.logo {
+  width: 70vw;
+  position: absolute;
+  top: 20vh;
+}
+
+
+.input {
+  position: absolute;
+  left: 20vw;
+  box-sizing: border-box;
+  width: 60vw;
+  height: 50px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  top: 70vh;
+}
+
+/* .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 60vw;
+  margin: auto;
+  margin-top: 70vh;
+} */
+
+.input.top {
+  margin-top: -165px;
+}
+
+.input.middle {
+  margin-top: -110px;
+}
+
+.input.bottom {
+  margin-top: -55px;
 }

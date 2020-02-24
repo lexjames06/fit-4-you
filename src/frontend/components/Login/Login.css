@@ -1,33 +1,8 @@
-.form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60vw;
-    margin: auto;
-    margin-top: 41vh;
-}
-
-.logo.login {
-    margin: auto;
-    display: block;
-}
-
-input#email,
-input#password {
-    margin: 5px 0;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-}
-
-input#password {
-    margin-bottom: 10px;
-}
-
-.button.login {
-    height: 50px;
-}
-
-.button.login h1 {
-    margin: 0;
+.show-password {
+    height: 20px;
+    position: absolute;
+    top: 70vh;
+    margin-left: 20vw;
+    z-index: 1;
+    margin-top: -40px;
 }

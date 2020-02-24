@@ -9,13 +9,6 @@
 .start.hide-start {
     transform: translateX(-200%); 
 }
-
-.logo {
-    display: inline-block;
-    width: 70vw;
-    position: relative;
-    top: 20vh;
-}
   
 .start-button {
     background-color: #f5c812;
