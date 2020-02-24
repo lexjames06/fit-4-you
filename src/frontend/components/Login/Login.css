@@ -1,8 +1,36 @@
-.show-password {
+/* .show-password {
     height: 20px;
-    position: absolute;
+    position: relative;
     top: 70vh;
     margin-left: 20vw;
     z-index: 1;
-    margin-top: -40px;
+    margin-top: -55px;
+} */
+
+.input.bottom {
+    display: grid;
+    grid-template-areas: "input icon";
+    grid-template-columns: 3fr 1fr;
+    padding: 0;
+    height: 50px;
+}
+
+.input.password{
+    top: 0;
+    left: 0;
+}
+
+.input#password {
+    position: relative;
+    width: 45vw;
+    border-radius: 10px 0 0 10px;
+    grid-area: "input";
+}
+
+.icon {
+    height: 20px;
+    grid-area: "icon";
+    padding: 12px 15px 18px;
+    background: white;
+    border-radius: 0 10px 10px 0;
 }

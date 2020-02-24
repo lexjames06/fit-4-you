@@ -43,20 +43,27 @@ function Login(props) {
                     className='input middle'
                     value={email}
                     onChange={e => setEmail(e.target.value)}
+                    onClick={e => e.preventDefault()}
                     placeholder='example@gmail.com'/>
-                <input 
-                    id='password' 
-                    name='password' 
-                    type={passwordVisibility ? 'text' : 'password'} 
-                    className='input bottom'
-                    value={password}
-                    onChange={e => setPassword(e.target.value)}
-                    placeholder='password' />
-                <img 
-                    className='show-password' 
-                    src={eye} 
-                    alt='show/hide password'
-                    onClick={togglePasswordVisibility} />
+                <div className='input bottom'>
+                    <input 
+                        id='password' 
+                        name='password' 
+                        type={passwordVisibility ? 'text' : 'password'} 
+                        className='input password'
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        onClick={e => e.preventDefault()}
+                        placeholder='password' />
+                    <div className='icon'>
+                        <img 
+                            id='icon'
+                            className='show-password'
+                            src={eye} 
+                            alt='show/hide password'
+                            onClick={togglePasswordVisibility} />
+                    </div>
+                </div>
                 <button
                     type='submit'
                     onClick={login}
