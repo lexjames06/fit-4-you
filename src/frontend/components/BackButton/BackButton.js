@@ -1,5 +1,5 @@
 import React from 'react'
-import back from '../assets/svg/back.svg'
+import back from '../../assets/svg/back.svg'
 import './BackButton.css'
 
 export default function BackButton({ backButtonClicked, currentPageNumber }) {

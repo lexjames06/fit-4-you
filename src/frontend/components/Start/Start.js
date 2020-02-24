@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/svg/logo-white.svg'
+import logo from '../../assets/svg/logo-white.svg'
 import './Start.css'
 
 export default function Start({

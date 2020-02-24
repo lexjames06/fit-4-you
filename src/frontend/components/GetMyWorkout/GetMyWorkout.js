@@ -1,17 +1,17 @@
 import React from 'react'
-import Start from './Start'
-import GenderQuestions from './GenderQuestions'
-import BackButton from './BackButton'
-import WorkoutGoalQuestions from './WorkoutGoalQuestions'
-import WorkoutLocationQuestions from './WorkoutLocationQuestions'
-import Results from './Results'
+import Start from '../Start/Start'
+import GenderQuestions from '../GenderQuestions/GenderQuestions'
+import BackButton from '../BackButton/BackButton'
+import WorkoutGoalQuestions from '../WorkoutGoalQuestions/WorkoutGoalQuestions'
+import WorkoutLocationQuestions from '../WorkoutLocation/WorkoutLocationQuestions'
+import Results from '../Results/Results'
 import './GetMyWorkout.css'
 
 export default class GetMyWorkout extends React.Component {
 
-    constructor() {
-        super();
-        this.state = { 
+    // constructor() {
+        // super();
+        state = { 
             currentPageNumber: 0,
             optionsSelected: {
                 Gender: '',
@@ -19,7 +19,7 @@ export default class GetMyWorkout extends React.Component {
                 Location: ''
             }
         };
-    }
+    // }
 
     toggleBackwards() {
         this.setState({
@@ -133,38 +133,40 @@ export default class GetMyWorkout extends React.Component {
         console.log(this.state)
         let { currentPageNumber, optionsSelected: { Gender, Goal, Location } } = this.state;
         return (
-            <div className='GetMyWorkout'>
-            <BackButton 
-                backButtonClicked={() => this.toggleBackwards()}
-                currentPageNumber={currentPageNumber}
-            />
-            <Start 
-                currentPageNumber={currentPageNumber}
-                getWorkoutButtonClicked={() => this.toggleQuestions()}
-            />
-            <GenderQuestions
-                currentPageNumber={currentPageNumber}
-                maleButtonClicked={() => this.toggleMale()}
-                femaleButtonClicked={() => this.toggleFemale()}
-            />
-            <WorkoutGoalQuestions
-                currentPageNumber={currentPageNumber}
-                bodyFatButtonClicked={() => this.toggleBodyFat()}
-                muscleButtonClicked={() => this.toggleMuscle()}
-                cvButtonClicked={() => this.toggleCV()}
-            />
-            <WorkoutLocationQuestions
-                currentPageNumber={currentPageNumber}
-                gymButtonClicked={() => this.toggleGym()}
-                homeButtonClicked={() => this.toggleHome()}
-                bothButtonClicked={() => this.toggleBoth()}
-            />
-            <Results 
-                currentPageNumber={currentPageNumber}
-                genderQuestionResult={Gender}
-                goalQuestionResult={Goal}
-                locationQuestionResult={Location}
-            />
+            <div className='App'>
+                <div className='GetMyWorkout'>
+                <BackButton 
+                    backButtonClicked={() => this.toggleBackwards()}
+                    currentPageNumber={currentPageNumber}
+                />
+                <Start 
+                    currentPageNumber={currentPageNumber}
+                    getWorkoutButtonClicked={() => this.toggleQuestions()}
+                />
+                <GenderQuestions
+                    currentPageNumber={currentPageNumber}
+                    maleButtonClicked={() => this.toggleMale()}
+                    femaleButtonClicked={() => this.toggleFemale()}
+                />
+                <WorkoutGoalQuestions
+                    currentPageNumber={currentPageNumber}
+                    bodyFatButtonClicked={() => this.toggleBodyFat()}
+                    muscleButtonClicked={() => this.toggleMuscle()}
+                    cvButtonClicked={() => this.toggleCV()}
+                />
+                <WorkoutLocationQuestions
+                    currentPageNumber={currentPageNumber}
+                    gymButtonClicked={() => this.toggleGym()}
+                    homeButtonClicked={() => this.toggleHome()}
+                    bothButtonClicked={() => this.toggleBoth()}
+                />
+                <Results 
+                    currentPageNumber={currentPageNumber}
+                    genderQuestionResult={Gender}
+                    goalQuestionResult={Goal}
+                    locationQuestionResult={Location}
+                />
+                </div>
             </div>
         );
     }
